@@ -31,14 +31,14 @@ import {
   Phone,
 } from 'lucide-react';
 import { UniqLogo } from './UniqLogo.tsx';
-import { RecentCallsTable } from './dashboard/RecentCallsTable.tsx';
-import { CreditsModal } from './dashboard/CreditsModal.tsx';
-import { TabPlaceholderView } from './dashboard/TabPlaceholders.tsx';
-import { AIAgentManagement } from './agents/AIAgentManagement.tsx';
-import { CallsManagementPage } from './calls/CallsManagementPage.tsx';
-import { WhatsAppManagementPage } from './whatsapp/WhatsAppManagementPage.tsx';
-import { ProfilePage, type ProfileSectionTab } from './profile/ProfilePage.tsx';
-import type { DashboardTab, BusinessProfileData } from '../types/navigation.ts';
+import { RecentCallsTable } from './RecentCallsTable.tsx';
+import { CreditsModal } from './CreditsModal.tsx';
+import { TabPlaceholdersView } from './TabPlaceholders.tsx';
+import { AIAgentManagement } from './AIAgentManagement.tsx';
+import { CallsManagementPage } from './CallsManagementPage.tsx';
+import { WhatsAppManagementPage } from './WhatsAppManagementPage.tsx';
+import { ProfilePage, type ProfileSectionTab } from './ProfilePage.tsx';
+import type { DashboardTab, BusinessProfileData } from './navigation.ts';
 
 interface MainDashboardProps {
   businessName?: string;
