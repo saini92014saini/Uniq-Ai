@@ -20,7 +20,7 @@ import {
   PhoneCall,
   X,
 } from 'lucide-react';
-import { UniqLogo } from '../UniqLogo.tsx';
+import { UniqLogo } from './UniqLogo.tsx';
 
 interface AboutSectionProps {
   onShowToast: (msg: string) => void;
