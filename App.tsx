@@ -5,13 +5,13 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { WelcomePage } from './components/WelcomePage.tsx';
-import { LoginPage } from './components/LoginPage.tsx';
-import { SignUpPage } from './components/SignUpPage.tsx';
-import { BusinessProfileSetupPage } from './components/BusinessProfileSetupPage.tsx';
-import { MainDashboard } from './components/MainDashboard.tsx';
-import { ForgotPasswordPlaceholder } from './components/ForgotPasswordPlaceholder.tsx';
-import type { AppView, BusinessProfileData } from './types/navigation.ts';
+import { WelcomePage } from './WelcomePage.tsx';
+import { LoginPage } from './LoginPage.tsx';
+import { SignUpPage } from './SignUpPage.tsx';
+import { BusinessProfileSetupPage } from './BusinessProfileSetupPage.tsx';
+import { MainDashboard } from './MainDashboard.tsx';
+import { ForgotPasswordPlaceholder } from './ForgotPasswordPlaceholder.tsx';
+import type { AppView, BusinessProfileData } from './navigation.ts';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<AppView>('welcome');
@@ -29,7 +29,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050B1A] text-slate-100 font-sans">
+    <div className="min-h-screen bg-[#050B14] text-slate-100 font-sans">
       <AnimatePresence mode="wait">
         {currentView === 'welcome' && (
           <motion.div
@@ -37,7 +37,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            className="w-full"
+            className="h-full"
           >
             <WelcomePage onGetStarted={() => setCurrentView('login')} />
           </motion.div>
@@ -49,7 +49,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98, transition: { duration: 0.2 } }}
-            className="w-full"
+            className="h-full"
           >
             <LoginPage
               onBackToWelcome={() => setCurrentView('welcome')}
@@ -66,7 +66,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98, transition: { duration: 0.2 } }}
-            className="w-full"
+            className="h-full"
           >
             <SignUpPage
               onBackToLogin={() => setCurrentView('login')}
@@ -82,7 +82,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98, transition: { duration: 0.2 } }}
-            className="w-full"
+            className="h-full"
           >
             <BusinessProfileSetupPage
               initialBusinessName={registeredBusinessName}
@@ -99,7 +99,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.2 } }}
-            className="w-full"
+            className="h-full"
           >
             <MainDashboard
               businessName={registeredBusinessName}
@@ -115,7 +115,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98, transition: { duration: 0.2 } }}
-            className="w-full"
+            className="h-full"
           >
             <ForgotPasswordPlaceholder
               onBackToLogin={() => setCurrentView('login')}
